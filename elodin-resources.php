@@ -3,7 +3,7 @@
 	Plugin Name: Elodin Resources
 	Plugin URI: https://elod.in
     Description: Just another plugin
-	Version: 0.1
+	Version: 0.2
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'ELODIN_RESOURCES', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'ELODIN_RESOURCES_VERSION', '0.1' );
+define ( 'ELODIN_RESOURCES_VERSION', '0.2' );
 
 // Set up plugin directories.
 define( 'ELODIN_RESOURCES_DIR', plugin_dir_path( __FILE__ ) );
