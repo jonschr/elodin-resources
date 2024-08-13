@@ -1,0 +1,18 @@
+a.ers-button {
+	padding: 12px 30px;
+	text-decoration: none;
+	background-color: var(--ers-white) !important;
+	color: var(--ers-dark) !important;
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: var(--ers-box-shadow);
+	border-radius: var(--ers-border-radius-buttons);
+	position: static;
+	display: inline-block;
+	transition: 0.3s all ease;
+
+	&:hover {
+		background-color: var(--ers-accent-active) !important;
+		color: var(--ers-white) !important;
+	}
+}

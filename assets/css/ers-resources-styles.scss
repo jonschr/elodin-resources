@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+$light: #f7f7f7;
+$default: #999999;
+$dark: #000000;
+
+html {
+	// colors
+	--ers-white: #ffffff;
+	--ers-base: #f7f7f7;
+	--ers-dark: #000000;
+	--ers-border-radius-buttons: 30px;
+	--ers-border-radius-boxes: 5px;
+	--ers-locked: rgb(138, 18, 18);
+	--ers-unlocked: rgb(66, 154, 66);
+	--ers-accent: #e68e00;
+	--ers-accent-active: #fc9b01;
+	--ers-box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07);
+	--ers-box-shadow-hover: rgba(0, 0, 0, 0.12) 0px 8px 15px;
+	--ers-box-shadow-active: 0 0 0 5px var(--ers-dark);
+}
+
+/* ==========================================================================
+   Queries
+   ========================================================================== */
+
+$thin: 600px;
+$medium: 960px;
+$wide: 1200px;
+
+@mixin mobile {
+	@media (max-width: #{$thin}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$thin}) and (max-width: #{$medium}) {
+		@content;
+	}
+}
+
+@mixin notdesktop {
+	@media (max-width: #{$medium}) {
+		@content;
+	}
+}
+
+@mixin notmobile {
+	@media (min-width: #{$thin}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$medium}) {
+		@content;
+	}
+}
+
+@mixin desktop-wide {
+	@media (min-width: #{$wide}) {
+		@content;
+	}
+}
+
+pre {
+	font-size: 13px;
+	line-height: 1.2em;
+}
+
+// import everything from subfolders of this folder automatically
+@import '*/**/*';

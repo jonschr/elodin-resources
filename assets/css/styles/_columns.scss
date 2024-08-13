@@ -1,0 +1,27 @@
+.resources-wrap {
+	display: grid;
+	gap: 40px;
+
+	&.columns-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&.columns-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@include notdesktop {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+}
+
+.facetwp-template[data-name='resources'] {
+	display: grid;
+	gap: 40px;
+	grid-template-columns: repeat(2, 1fr);
+
+	@include notdesktop {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+}

@@ -1,0 +1,36 @@
+.lock-icon-wrap {
+	border-radius: 100%;
+	background-color: var(--ers-dark);
+	width: 52px;
+	height: 52px;
+	padding: 8px;
+	text-align: center;
+	border: 3px solid var(--ers-white);
+	display: inline-block;
+
+	.lock-icon {
+		font-family: 'dashicons';
+		color: var(--ers-white);
+		font-size: 30px;
+		line-height: 30px;
+		display: block;
+	}
+
+	&.locked {
+		background-color: var(--ers-locked);
+		.lock-icon {
+			&:before {
+				content: '\f160';
+			}
+		}
+	}
+
+	&.unlocked {
+		background-color: var(--ers-unlocked);
+		.lock-icon {
+			&:before {
+				content: '\f528';
+			}
+		}
+	}
+}
