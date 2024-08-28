@@ -3,7 +3,7 @@
 	Plugin Name: Elodin Resources
 	Plugin URI: https://elod.in
     Description: Just another plugin
-	Version: 0.2
+	Version: 0.3
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'ELODIN_RESOURCES', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'ELODIN_RESOURCES_VERSION', '0.2' );
+define ( 'ELODIN_RESOURCES_VERSION', '0.3' );
 
 // Set up plugin directories.
 define( 'ELODIN_RESOURCES_DIR', plugin_dir_path( __FILE__ ) );
@@ -57,3 +57,14 @@ function ers_require_files_recursive( $directory ) {
 
 // Require_once all files in /lib and its subdirectories.
 ers_require_files_recursive( ELODIN_RESOURCES_DIR . 'lib' );
+
+// Load Plugin Update Checker.
+require ELODIN_RESOURCES_DIR . 'vendor/plugin-update-checker/plugin-update-checker.php';
+$update_checker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/jonschr/elodin-resources',
+	__FILE__,
+	'elodin-resources'
+);
+
+// Optional: Set the branch that contains the stable release.
+$update_checker->setBranch( 'main' );
