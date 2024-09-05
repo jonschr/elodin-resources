@@ -15,6 +15,7 @@ echo '<div class="single-resources-wrap">';
 	
 		$title = get_the_title();
 		$content = get_the_content();
+		$id = get_the_ID();
 		
 		if ( $title ) {
 			printf( '<h1 class="resource-title">%s</h1>', esc_html( $title ) );
@@ -28,9 +29,13 @@ echo '<div class="single-resources-wrap">';
 
 		// Calculate the time difference and format it
 		$relative_time = human_time_diff($last_modified_timestamp, $current_timestamp);
+		
+		if ( $id && is_user_logged_in() ) {
+			$access_link = sprintf( '· <a class="access-link" href="/access/?resourceid=%s" target="_blank">View access page</a>', esc_html( $id ) );
+		}
 
 		// Output the relative time using printf
-		printf('<p>Last edited %s ago</p>', esc_html($relative_time));
+		printf('<p>Last edited %s ago %s</p>', esc_html($relative_time), $access_link );
 		
 		if ( $content ) {
 			printf( '<div class="resource-content">%s</div>', apply_filters( 'the_content', $content ) );

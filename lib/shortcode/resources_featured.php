@@ -43,7 +43,6 @@ function ers_shortcode_resources( $atts ) {
 
 	}
 	
-	
 	return ob_get_clean();
 }
 add_shortcode( 'resources', 'ers_shortcode_resources' );

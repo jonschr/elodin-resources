@@ -6,7 +6,7 @@ function ers_resource_excerpt_func( $atts ) {
 	$resource_id = ers_get_post_id_from_resourceid();
 	
 	if ( ! $resource_id ) {
-		return apply_filters( 'the_content', 'This is a placeholder for the resource excerpt. The resource ID is not set. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.' );
+		return apply_filters( 'the_content', '<p>This is a placeholder for the resource excerpt. The resource ID is not set. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>' );
 	}
 	
 	$excerpt = get_the_excerpt( $resource_id);
