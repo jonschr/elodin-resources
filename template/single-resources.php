@@ -16,6 +16,7 @@ echo '<div class="single-resources-wrap">';
 		$title = get_the_title();
 		$content = get_the_content();
 		$id = get_the_ID();
+		$access_link = '';
 		
 		if ( $title ) {
 			printf( '<h1 class="resource-title">%s</h1>', esc_html( $title ) );
