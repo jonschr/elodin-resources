@@ -16,9 +16,20 @@ function ers_register_taxonomies() {
 		'resources',
 		array(
 			'label' 			=> __( 'Topics' ),
-			'rewrite' 		=> array( 'slug' => 'topics' ),
-			'hierarchical' 	=> true,
-			'show_in_rest' 	=> true,
+			'rewrite' 			=> false,
+			'hierarchical' 		=> true,
+			'show_in_rest' 		=> true,
+		)
+	);
+	
+	register_taxonomy(
+		'resourcetypes',
+		'resources',
+		array(
+			'label' 			=> __( 'Resource types' ),
+			'rewrite' 			=> false,
+			'hierarchical' 		=> true,
+			'show_in_rest' 		=> true,
 		)
 	);
 }
