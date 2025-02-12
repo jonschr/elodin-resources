@@ -15,7 +15,7 @@ function ers_register_taxonomies() {
 		'topics',
 		'resources',
 		array(
-			'label' 			=> __( 'Topics' ),
+			'label' 			=> __( 'Resource topics' ),
 			'rewrite' 			=> false,
 			'hierarchical' 		=> true,
 			'show_in_rest' 		=> true,
