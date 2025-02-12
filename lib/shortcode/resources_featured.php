@@ -7,6 +7,8 @@ function ers_shortcode_resources( $atts ) {
 		'post_class' => '',
 		'wrap_class' => '',
 		'columns' => 3,
+		'taxonomy' => '',
+		'terms' => '',
 	), $atts );
 
 	ob_start();
@@ -16,6 +18,17 @@ function ers_shortcode_resources( $atts ) {
 		'post_type' => 'resources',
 		'posts_per_page' => $a['posts_per_page'],
 	);
+
+	// Add taxonomy and terms to the query if they exist
+	if ( !empty( $a['taxonomy'] ) && !empty( $a['terms'] ) ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => $a['taxonomy'],
+				'field' => 'slug',
+				'terms' => explode( ',', $a['terms'] ),
+			),
+		);
+	}
 
 	// The Query
 	$custom_query = new WP_Query( $args );
